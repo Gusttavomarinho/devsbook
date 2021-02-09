@@ -68,4 +68,8 @@ class LoginController extends Controller {
       $this->render('sigup',$data);
         
     }
+
+    public function  sigupAction(){
+        
+    }
 }

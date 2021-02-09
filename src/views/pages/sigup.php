@@ -25,12 +25,20 @@
 
             <input placeholder="Digite sua senha" class="input" type="password" name="password" />
 
-            <input placeholder="Digite sua data de nascimento" class="input" type="text" name="birthdate" />
+            <input placeholder="Digite sua data de nascimento" class="input" type="text" name="birthdate" id="birthdate"/>
 
             <input class="button" type="submit" value="Fazer Cadastro" />
 
             <a href="<?=$base;?>/login">Ja tem conta? Faça o login</a>
         </form>
     </section>
+<script src=https://unpkg.com/imask></script>
+<script>
+IMask(
+  document.getElementById('birthdate'),{
+    mask:'00/00/0000'
+  }
+);
+</script>
 </body>
 </html>
