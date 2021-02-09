@@ -23,7 +23,7 @@ class LoginController extends Controller {
       ];
       /**  *************** */ 
 
-      $this->render('login',$data);
+      $this->render('sigin',$data);
         
     }
 
@@ -48,9 +48,24 @@ class LoginController extends Controller {
       }
     }
 
-    public function sigup() {
 
-      echo 'cadastro';
+    public function sigup() {
+      /**sistema de aviso */
+      $flash = '';
+      if(!empty($_SESSION['flash'])){
+        $flash = $_SESSION['flash'];
+        $_SESSION['flash'] = '';
+      }
+      /**  *************** */ 
+
+      /** colocando o titulo da pagina dinamico */
+      $data = [
+        'titulo' => 'Cadastro - Devsbook',
+        'flash' => $flash
+      ];
+      /**  *************** */ 
+
+      $this->render('sigup',$data);
         
     }
 }
