@@ -1,0 +1,29 @@
+<?php
+namespace src\handlers;
+use \src\models\User;
+
+class LoginHandler {
+
+  public static function checkLogin(){
+    //verifica se existe a sessao token
+    if(!empty($_SESSION['token'])){
+      //pega os valores da sessao token
+      $token = $_SESSION['token'];
+
+      //verificando no bd se existe um usuario com este token
+      $data = User::select()->where('token',$token)->one();
+      if(count($data) > 0){
+
+        $loggedUser = new User();
+        $loggedUser->id = $data['id'];
+        $loggedUser->email = $data['email'];
+        $loggedUser->name = $data['name'];
+
+        return $loggedUser;
+
+      }
+    }
+      return false;
+  }
+
+}
