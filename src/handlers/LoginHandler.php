@@ -26,4 +26,26 @@ class LoginHandler {
       return false;
   }
 
+  public static function verifyLogin($email,$password){
+    //buscando o usuario pelo email
+    $user = User::select()->where('email',$email)->one();
+
+    //se achar o usuario agora vai verificar a senha
+    if ($user){
+      if(password_verify($password,$user['password'])){
+          //gerando o token de login do usuario
+          $token = md5(time().rand(0,9999).time());
+          //salvando o token no banco de dados
+          User::update()
+            ->set('token',$token)
+            ->where('email',$email)
+          ->execute();
+          //retornando o token
+          return $token;
+      }
+    }
+    return false;
+
+  }
+
 }

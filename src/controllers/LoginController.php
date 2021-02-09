@@ -8,9 +8,21 @@ class LoginController extends Controller {
 
     
     public function sigin() {
+      /**sistema de aviso */
+      $flash = '';
+      if(!empty($_SESSION['flash'])){
+        $flash = $_SESSION['flash'];
+        $_SESSION['flash'] = '';
+      }
+      /**  *************** */ 
+
+      /** colocando o titulo da pagina dinamico */
       $data = [
-        'titulo' => 'Login - Devsbook'
+        'titulo' => 'Login - Devsbook',
+        'flash' => $flash
       ];
+      /**  *************** */ 
+
       $this->render('login',$data);
         
     }
