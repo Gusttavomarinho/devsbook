@@ -8,7 +8,7 @@ class LoginController extends Controller {
     
     public function sigin() {
 
-      echo 'login';
+      
         
     }
 
