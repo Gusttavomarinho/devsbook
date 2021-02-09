@@ -5,6 +5,10 @@ $router = new Router();
 
 $router->get('/', 'HomeController@index');
 
+//Rotas Login controller
+$router->get('/login', 'LoginController@sigin');
+$router->get('/cadastro', 'LoginController@sigup');
+
 /*
 * rotas para testar o funcionamento do mvc da b7web 
 *
