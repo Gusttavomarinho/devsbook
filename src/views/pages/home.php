@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="column pr-5">
 
-                    <?=$render('feed-editor',['loggedUser'=>$loggedUser]);?>
+                    <?=$render('feed-editor',['user'=>$loggedUser]);?>
 
                     <?=$render('feed-item');?>
 
