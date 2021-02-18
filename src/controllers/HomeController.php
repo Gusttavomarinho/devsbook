@@ -18,8 +18,11 @@ class HomeController extends Controller {
     }
 
     public function index() {
-        $this->render('home');
-        //$this->redirect('/login');
+        $data = [
+            'loggedUser' => $this->loggedUser
+        ];
+        $this->render('home',$data);
+        
     }
 
 }
