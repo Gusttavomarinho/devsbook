@@ -15,19 +15,19 @@
             <div class="head-side">
                 <div class="head-side-left">
                     <div class="search-area">
-                        <form method="GET">
+                        <form method="GET" action="<?=$base;?>/pesquisa">
                             <input type="search" placeholder="Pesquisar" name="s" />
                         </form>
                     </div>
                 </div>
                 <div class="head-side-right">
-                    <a href="" class="user-area">
+                    <a href="<?=$base;?>/perfil" class="user-area">
                         <div class="user-area-text">Bonieky</div>
                         <div class="user-area-icon">
                             <img src="<?=$base;?>/media/avatars/avatar.jpg" />
                         </div>
                     </a>
-                    <a href="" class="user-logout">
+                    <a href="<?=$base;?>/sair" class="user-logout">
                         <img src="<?=$base;?>/assets/images/power_white.png" />
                     </a>
                 </div>
