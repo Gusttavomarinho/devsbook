@@ -24,7 +24,7 @@
                     <a href="<?=$base;?>/perfil" class="user-area">
                         <div class="user-area-text"><?=$loggedUser->name?></div>
                         <div class="user-area-icon">
-                            <img src="<?=$base;?>/media/avatars/<?=$loggedUser->avata?>" />
+                            <img src="<?=$base;?>/media/avatars/<?=$loggedUser->avatar?>" />
                         </div>
                     </a>
                     <a href="<?=$base;?>/sair" class="user-logout">
