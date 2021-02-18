@@ -14,6 +14,10 @@ $router->post('/cadastro', 'LoginController@sigupAction');
 //$router->get('/pesquisa');
 //$router->get('/perfil');
 //$router->get('/sair');
+//$router-get('/amigos');
+//$router-get('/fotos');
+//$router-get('/config');
+
 
 /*
 * rotas para testar o funcionamento do mvc da b7web 
