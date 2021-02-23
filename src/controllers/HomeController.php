@@ -3,6 +3,7 @@ namespace src\controllers;
 
 use \core\Controller;
 use \src\handlers\LoginHandler;
+use \src\handlers\PostHandler;
 
 class HomeController extends Controller {
 
@@ -18,8 +19,14 @@ class HomeController extends Controller {
     }
 
     public function index() {
+
+        $feed = PostHandler::getHomeFeed(
+            $this->loggedUser->id
+        );
+
         $data = [
-            'loggedUser' => $this->loggedUser
+            'loggedUser' => $this->loggedUser,
+            'feed' => $feed
         ];
         $this->render('home',$data);
         
