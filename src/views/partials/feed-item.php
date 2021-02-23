@@ -48,7 +48,7 @@
                     <a href=""><img src="<?=$base;?>/media/avatars/default.jpg" /></a>
                 </div>
                 <div class="fic-item-info">
-                    <a href="">Bonieky Lacerda !</a>
+                    <a href="">Bonieky Lacerda !!</a>
                     Muito legal, parabéns!
                 </div>
             </div>
