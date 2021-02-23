@@ -29,11 +29,37 @@ class PostHandler {
     }
     $users[] = $idUser;
 
-    print_r($users);
+    //print_r($users);
     // 2. pegar os ponts desta galera ordenado pela data
+    $postList = Post::select()
+      ->where('id_user','in',$users)
+      ->orderBy('created_at','desc')
+    ->get();
+
+    //print_r($postList);
     // 3. transforma o resultado em objetos dos models
-    // 4. preencher as informações adicionais no post
+    $posts = [];
+    foreach($postList as $postItem){
+      $newPost = new Post();
+      $newPost->id = $postItem['id'];
+      $newPost->type = $postItem['type'];
+      $newPost->created_at = $postItem['created_at'];
+      $newPost->body = $postItem['body'];
+      // 4. preencher as informações adicionais no post
+      $newUser =  User::select()->where('id',$postItem['id_user'])->one();
+      $newPost->user = new User();
+      $newPost->user->id = $newUser['id'];
+      $newPost->user->name = $newUser['name'];
+      $newPost->user->avatar = $newUser['avatar'];
+      //TODO: 4.1 preencher informações de Like
+      //TODO: 4.2 preencher informações de COMMENTS
+
+      $posts[] = $newPost;
+    }
+
+    
     // 5. retorna o resultado.
+    return $posts;
 
   }
 
