@@ -20,7 +20,7 @@ class PostHandler {
       }
   }
 
-  public static function getHomeFeed($idUser) {
+  public static function getHomeFeed($idUser,$page) {
     // 1. pegar a lista de usuarios que eu sigo.
     $userList =  UserRelation::select()->where('user_from',$idUser)->get();
     $users = [];
@@ -34,6 +34,7 @@ class PostHandler {
     $postList = Post::select()
       ->where('id_user','in',$users)
       ->orderBy('created_at','desc')
+      ->page($page,2)
     ->get();
 
     //print_r($postList);
