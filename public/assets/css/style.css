@@ -401,6 +401,10 @@ header .head-side {
     color: #000;
 }
 
+.feed-pagination  a:hover {
+    background-color: #ddd;
+}
+
 .feed-pagination  a.active {
     background-color: #fff;
 }
